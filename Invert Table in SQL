@@ -1,4 +1,11 @@
-Select student_id, max(English) as English, max(Science) As Science, max(Maths) As Maths
+#create table marks_data(student_id int, subject varchar(50), marks int);   --- Table
+#insert into marks_data values(1001, "English", 88);
+#insert into marks_data values(1001, "Science", 90);
+#insert into marks_data values(1001, "Maths", 85);
+#insert into marks_data values(1002, "English", 70);
+#insert into marks_data values(1002, "Science", 80);
+#insert into marks_data values(1002, "Maths", 83);		
+Select student_id, max(English) as English, max(Science) As Science, max(Maths) As Maths     --- Solution
 from (
   select student_id,
      case when  subject = 'English' then marks end English,
