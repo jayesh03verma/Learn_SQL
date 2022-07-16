@@ -1,0 +1,8 @@
+Select student_id, max(English) as English, max(Science) As Science, max(Maths) As Maths
+from (
+  select student_id,
+     case when  subject = 'English' then marks end English,
+     case when  subject = 'Science' then marks end Science,
+     case when  subject = 'Maths' then marks end Maths
+  from marks_data
+) t group by  student_id;
